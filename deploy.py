@@ -8,6 +8,8 @@ script_dir = Path(os.path.dirname(os.path.abspath(__file__)))
 for f in script_dir.glob('.*'):
     if f.name == '.DS_Store':
         continue
+    if f.name == '.git':
+        continue
 
     symlink = f.parent.parent / f.name
     with contextlib.suppress(FileExistsError):
