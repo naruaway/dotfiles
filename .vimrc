@@ -67,8 +67,10 @@ if dein#load_state('~/.vim/dein')
   let g:ctrlp_clear_cache_on_exit = 1
 
 
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('mattn/emmet-vim')
+
+
+  call dein#add('tpope/vim-fugitive')
 
   " Required:
   call dein#end()
