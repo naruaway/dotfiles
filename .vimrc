@@ -70,6 +70,9 @@ if dein#load_state('~/.vim/dein')
   call dein#add('mattn/emmet-vim')
 
 
+  call dein#add('vim-scripts/vim-soy')
+
+
   call dein#add('tpope/vim-fugitive')
 
   " Required:
