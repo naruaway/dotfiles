@@ -33,68 +33,6 @@ set clipboard=unnamed
 "
 "
 
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('~/.vim/dein')
-  call dein#begin('~/.vim/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-
-
-  " Add or remove your plugins here:
-  call dein#add('lilydjwg/python-syntax')
-  let python_highlight_all = 1
-
-  call dein#add('sjl/gundo.vim')
-  let g:gundo_prefer_python3 = 1
-
-  call dein#add('ctrlpvim/ctrlp.vim')
-  let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-  let g:ctrlp_arg_map = 1
-  let g:ctrlp_working_path_mode = 2
-  "let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript']
-  let g:ctrlp_clear_cache_on_exit = 1
-
-
-  call dein#add('mattn/emmet-vim')
-
-
-  call dein#add('vim-scripts/vim-soy')
-
-
-  call dein#add('tpope/vim-fugitive')
-
-
-  call dein#add('artur-shaik/vim-javacomplete2')
-  autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
 
 
 
@@ -165,3 +103,68 @@ inoremap <silent> <C-Y> <C-R>"
 
 nnoremap <silent> <C-N> :<C-U>tabnew<CR>:<C-U>CtrlP<CR>
 nnoremap <silent> <C-P> :<C-U>CtrlP<CR>
+
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+
+
+  " Add or remove your plugins here:
+  call dein#add('lilydjwg/python-syntax')
+  let python_highlight_all = 1
+
+  call dein#add('sjl/gundo.vim')
+  let g:gundo_prefer_python3 = 1
+
+  call dein#add('ctrlpvim/ctrlp.vim')
+  let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+  let g:ctrlp_arg_map = 1
+  let g:ctrlp_working_path_mode = 2
+  "let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript']
+  let g:ctrlp_clear_cache_on_exit = 1
+
+
+  call dein#add('mattn/emmet-vim')
+
+
+  call dein#add('vim-scripts/vim-soy')
+
+
+  call dein#add('tpope/vim-fugitive')
+
+
+  call dein#add('artur-shaik/vim-javacomplete2')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+" Java
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java setlocal shiftwidth=4
