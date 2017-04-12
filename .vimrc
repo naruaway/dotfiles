@@ -75,6 +75,11 @@ if dein#load_state('~/.vim/dein')
 
   call dein#add('tpope/vim-fugitive')
 
+
+  call dein#add('artur-shaik/vim-javacomplete2')
+  autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+
   " Required:
   call dein#end()
   call dein#save_state()
