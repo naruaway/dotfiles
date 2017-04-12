@@ -60,7 +60,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('ctrlpvim/ctrlp.vim')
   let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
   let g:ctrlp_arg_map = 1
   let g:ctrlp_working_path_mode = 2
   "let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript']
