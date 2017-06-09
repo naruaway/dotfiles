@@ -147,12 +147,35 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tpope/vim-fugitive')
 
 
-  call dein#add('artur-shaik/vim-javacomplete2')
+  "call dein#add('artur-shaik/vim-javacomplete2')
+
+
+  "call dein#add('w0rp/ale')
+
+
+  call dein#add('leafgarland/typescript-vim')
+
+
+  call dein#add('derekwyatt/vim-scala')
+  call dein#add('vim-syntastic/syntastic')
+
 
   " Required:
   call dein#end()
   call dein#save_state()
 endif
+
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Required:
 filetype plugin indent on
@@ -168,3 +191,8 @@ endif
 " Java
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal shiftwidth=4
+
+
+" always show gutter
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
